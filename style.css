@@ -1,0 +1,53 @@
+body {
+  background-color: #12121f;
+  color: #eee;
+}
+
+.container {
+  padding: 10px;
+  gap: 10px;
+  user-select: none;
+  background-color: #42121f;
+  width: 40rem;
+  height: 40rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-rows: auto 50px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "matrix matrix"
+    "create-button transpose-button";
+}
+
+.matrix {
+  grid-area: matrix;
+}
+
+#create-button {
+  grid-area: create-button;
+}
+
+#transpose-button {
+  grid-area: transpose-button;
+}
+
+button {
+  cursor: pointer;
+  background-color: #fff3;
+  border: none;
+  border-radius: 6px;
+  color: #eee;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #fff5;
+}
+
+button:active {
+  transform: translate(2px, 2px);
+  background: #0003;
+}
