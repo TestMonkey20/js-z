@@ -15,18 +15,36 @@ class Matrix {
 	}
 
 	getValue = (x, y) => {
-		return this.data[y][x]
+		if(x>=this.width || y>=this.height) {
+			throw new Error("Index out of bounds")
+		} 
+		else {
+			return this.data[y][x]
+		}
 	}
 
 	transpose = () => {
-		const matrix = new Matrix(this.height, this.width)
-		displayMatrix()
+
+		const transposed = new Array(this.width)
+			.fill(null)
+			.map( () => new Int8Array(this.height))
+
+		for(let y = 0; y<this.height; y++) {
+
+			for(let x = 0; x<this.width; x++) {
+				transposed[x][y] = this.data[y][x]
+			}
+		}
+		
+		const tempSize = this.height
+		this.height = this.width
+		this.width = tempSize
+		this.data = transposed
 	}
 }
 
-let matrix = new Matrix(4, 2)
-matrix.setValue(2, 1, 5)
-matrix.setValue(0, 0, 6)
+let matrix = null
+
 
 const promptValid = (messesage) => {
 	
@@ -86,18 +104,8 @@ createBtn.addEventListener('click', () => {
 })
 
 transposeBtn.addEventListener('click', () => {
-
-	const transposed = new Matrix(matrix.height, matrix.width)
-	for(let y = 0; y<matrix.height; y++) {
-
-		for(let x = 0; x<matrix.width; x++) {
-			const a = matrix.getValue(x,y)
-			transposed.setValue(y, x, a)
-		}
-	}
-	matrix = transposed
-
-	displayMatrix()
+	matrix.transpose()
+	displayMatrix()	
 })
 
 displayMatrix()
