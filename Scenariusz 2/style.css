@@ -1,0 +1,36 @@
+body {
+  background-color: #12121f;
+  color: #eee;
+  display: grid;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+#error {
+  display: flex;
+  flex-direction: column;
+}
+
+#error > span {
+  margin: 10px 0;
+  color: red;
+}
+
+#form {
+  justify-self: center;
+  align-self: center;
+  width: 350px;
+  display: grid;
+  grid-template-columns: 150px auto;
+  gap: 5px;
+}
+
+#form:nth-child(odd) {
+  text-align: right;
+}
+
+.submit {
+  height: 30px;
+  
+}
