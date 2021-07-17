@@ -6,7 +6,6 @@
 		const pageSize = 10
 		const maxPagination = 5
 		const pageCount = Math.ceil(items.length/pageSize)
-
 		const table = document.querySelector('table.starlink-table > tbody')
 		table.innerHTML = items
 			.map((it, n) => ({n: n+1,...it}))

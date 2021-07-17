@@ -1,8 +1,8 @@
 :root {
 	--body-bg-color: rgb(18, 18, 31);
 	--font-color: hsl(0, 0%, 93%);
-	--header-bg-color: hsl(0, 0%, 20%);
-	--main-bg-color: hsl(0, 14%, 23%);
+	--header-bg-color: #223;
+	--main-bg-color: hsla(0, 14%, 23%, 0);
 	--footer-bg-color: hsl(0, 25%, 27%);
 
 	font-size: 12px;
@@ -29,6 +29,7 @@ body > header {
 	display: flex;
 	grid-area: header;
 	background-color: var(--header-bg-color);
+	border-radius: 0 0 8px 8px;
 	justify-content: center;
 }
 
@@ -62,6 +63,7 @@ ul.main-nav > li > a {
 	font-size: 1.4rem;
 	transition-duration: .2s;
 	white-space: nowrap;
+	opacity: 0.5;
 }
 
 ul.main-nav > li > a:visited{
@@ -69,7 +71,7 @@ ul.main-nav > li > a:visited{
 }
 
 ul.main-nav > li > a:hover {
-	background-color: hsla(192, 100%, 81%, 0.1);
+	opacity: 1;
 }
 
 ul.main-nav > li > a:active{
@@ -93,22 +95,6 @@ ul.main-nav > li > a::after {
 ul.main-nav > li > a:hover::after, 
 ul.main-nav > li.selected > a::after {
 	width: calc(100% - 30px);
-}
-
-.starlink-table {
-	width: 100%;
-	font-size: 1.4rem;
-	border-collapse: collapse;
-}
-
-.starlink-table > thead > tr {
-	text-align: left;
-	font-weight: bold;
-	color: #fff5;
-}
-
-.starlink-table > * > tr > * {
-	padding: 5px;
 }
 
 .starlink-table > tbody > tr:nth-child(odd) {
@@ -136,4 +122,96 @@ ul.main-nav > li.selected > a::after {
 
 .pagination > a.selected {
 	background-color: hsla(192, 100%, 81%, 0.1);
+}
+
+article.card {
+	margin: 30px 0;
+	background-color: #223;
+	border-radius: 8px;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: 1.2fr 1fr;
+}
+
+@media (max-width: 800px) {
+	article.card {
+		grid-template-columns: 1fr;
+		grid-template-rows: 400px auto;
+	}
+}
+
+article.card > main {
+	display: flex;
+	flex-direction: column;
+	align-content: stretch;
+}
+
+article.card > main > h1 {
+	padding-top: 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid white;
+	margin: 0 30px;
+	font-weight: 900;
+	font-size: 3rem;
+}
+
+article.card > main > p {
+	
+	padding-top: 15px;
+	margin: 0 30px;
+	font-size: 1.2rem;
+	line-height: 150%;
+	opacity: 0.5;
+}
+
+article.card > header {
+	opacity: 1;
+	background-position: center;
+	background-size: cover;
+}
+
+
+
+table {
+	margin-top: 30px;
+	width: 100%;
+	border-collapse: collapse;
+	border: none;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	padding: 8px 30px;
+}
+
+table > tbody > tr > td {
+	padding: 8px 30px;
+	font-size: 1.2rem;
+}
+
+@media (max-width: 600px) {
+	table > tbody > tr > td {
+		display: flex;
+		flex-wrap: wrap;
+		
+	}
+	table > thead > tr > th {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+table > tbody > tr:nth-of-type(odd) {
+	background-color: #ffffff08;
+}
+
+body > main > p{
+	font-size: 1.4rem;
+	
+}
+
+
+
+.images > img {
+	width: 100%;
 }

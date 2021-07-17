@@ -30,12 +30,12 @@ const fetchRockets = async () => {
 			description: rocket.description,
 			firstFlight: rocket.first_flight,
 			costPerLaunch: rocket.cost_per_launch,
-			inUse: rocket.activate,
+			inUse: rocket.active,
 			engines: {
-				thrustSeaLevel: rocket.engines.thrust_sea_level,
-				thrustVacuum: rocket.engines.thrust_vacuum,
+				thrustSeaLevel: rocket.engines.thrust_sea_level.kN,
+				thrustVacuum: rocket.engines.thrust_vacuum.kN,
 				type: rocket.engines.type,
-				thrustToWeight: rocket.engines.thurst_to_weight
+				thrustToWeight: rocket.engines.thrust_to_weight,
 			}
 		}
 	}
