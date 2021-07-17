@@ -8,13 +8,13 @@
 		// --- Stack Overflow person
 
 		const setters = Array.prototype.slice
-			.call(document.querySelectorAll('body > main > .tablewrapper > table > tbody > tr > td'))
+			.call(document.querySelectorAll('body > main > .table-wrapper > table > tbody > tr > td'))
 			.map(el => html => el.innerHTML = html)
 
 		const [setLaunchDate, setEarthDistance, setMarsDistance] = setters
 		setLaunchDate(items.launchDate)
-		setEarthDistance(items.earthDistance + " km")
-		setMarsDistance(items.marsDistance + " km")
+		setEarthDistance(Math.round(items.earthDistance/1000000) + "mln km")
+		setMarsDistance(Math.round(items.marsDistance/1000000) + "mln km")
 			
 		descriptionHandle = document.querySelector('body > main > p')
 		descriptionHandle.innerHTML = items.description

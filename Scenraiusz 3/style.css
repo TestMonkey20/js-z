@@ -189,18 +189,6 @@ table > tbody > tr > td {
 	font-size: 1.2rem;
 }
 
-@media (max-width: 600px) {
-	table > tbody > tr > td {
-		display: flex;
-		flex-wrap: wrap;
-		
-	}
-	table > thead > tr > th {
-		display: flex;
-		flex-wrap: wrap;
-	}
-}
-
 table > tbody > tr:nth-of-type(odd) {
 	background-color: #ffffff08;
 }
@@ -210,8 +198,10 @@ body > main > p{
 	
 }
 
-
-
 .images > img {
 	width: 100%;
+}
+
+.table-wrapper{
+	overflow-x: auto;
 }
