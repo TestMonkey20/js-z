@@ -40,6 +40,7 @@ form.addEventListener('submit', (e) => {
 		messages.push('* Proszę wpisać numer telefonu w formacie +48XXXXXXXXX')
 	}
 
+	const postCodeRegExp = /^\d{2}\-\d{3}$/
 	if (!postCodeRegExp.test(postCode.value)) {
 		messages.push('* Proszę wpisać kod pocztowy w formacie XX-XXX')
 	}
